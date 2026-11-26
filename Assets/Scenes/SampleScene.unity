@@ -1339,6 +1339,7 @@ GameObject:
   - component: {fileID: 1488232149}
   - component: {fileID: 1488232148}
   - component: {fileID: 1488232150}
+  - component: {fileID: 1488232151}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1381,6 +1382,23 @@ MonoBehaviour:
   sprintSpeed: 7
   jumpHeight: 1.2
   gravity: -20
+--- !u!114 &1488232151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488232146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d61a1e8cb6c40eca1cf86e3f2c55482, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::FirstPersonAttack
+  armsAnimator: {fileID: 862951481}
+  playerCamera: {fileID: 330585545}
+  damage: 25
+  attackRange: 2
+  impactTime: 0.35
 --- !u!143 &1488232149
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1510,7 +1528,7 @@ Transform:
   m_GameObject: {fileID: 1737013633}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.93, z: 0}
+  m_LocalPosition: {x: -0.172, y: 0.964, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1528,6 +1546,8 @@ GameObject:
   - component: {fileID: 1823315028}
   - component: {fileID: 1823315027}
   - component: {fileID: 1823315026}
+  - component: {fileID: 1823315029}
+  - component: {fileID: 1823315030}
   m_Layer: 0
   m_Name: Capsule Enemy
   m_TagString: Untagged
@@ -1551,6 +1571,42 @@ MonoBehaviour:
   detectionRadius: 3
   repathInterval: 0.2
   targetSampleRadius: 2
+--- !u!114 &1823315029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823315025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a91f71b5cc45d49467c7cfda47cc1b, type: 3}
+  m_Name:
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyHealth
+  maxHealth: 100
+--- !u!136 &1823315030
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823315025}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!195 &1823315027
 NavMeshAgent:
   m_ObjectHideFlags: 0
